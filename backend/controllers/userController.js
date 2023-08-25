@@ -1,4 +1,6 @@
 import asyncHandler from "express-async-handler";
+import User from '../models/userModel.js';
+
 
 const authUser = asyncHandler(async (req, res) => {
   //   res.status(401);
@@ -8,6 +10,15 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 const registerUser = asyncHandler(async (req, res) => {
+  const { name, email, password } = req.body;
+  console.log(name, email, password);
+
+  const userExists = await User.findOne({ email });
+
+  if (userExists) {
+    res.status(400);
+    throw new Error('User already exists')
+  }
   res.status(200).json({ message: "Register User" });
 });
 
