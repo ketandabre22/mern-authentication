@@ -1,6 +1,6 @@
 import { Container, Card, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div className=" py-5">
