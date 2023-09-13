@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import FormContainer from "./components/FormContainer.jsx";
+import FormContainer from "../components/FormContainer.jsx";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +14,7 @@ const LoginScreen = () => {
   return (
     <FormContainer>
       <h1>Sign In</h1>
-      <Form>
+      <Form onSubmit={submitHandler}>
         <Form.Group className="my-2" controlId="email">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
